@@ -1,7 +1,6 @@
 package org.apache.kylin.client.method;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 import javax.xml.bind.DatatypeConverter;
 

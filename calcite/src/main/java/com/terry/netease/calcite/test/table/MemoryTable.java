@@ -39,8 +39,7 @@ public class MemoryTable extends AbstractTable implements ScannableTable {
 		if(dataType == null) {
             RelDataTypeFactory.FieldInfoBuilder fieldInfo = typeFactory.builder();
             for (MemoryData.Column column : this.sourceTable.columns) {
-                RelDataType sqlType = typeFactory.createJavaType(
-                        MemoryData.JAVATYPE_MAPPING.get(column.type));
+                RelDataType sqlType = typeFactory.createJavaType(MemoryData.JAVATYPE_MAPPING.get(column.type));
                 sqlType = SqlTypeUtil.addCharsetAndCollation(sqlType, typeFactory);
                 fieldInfo.add(column.name, sqlType);
             }

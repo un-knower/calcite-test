@@ -525,6 +525,7 @@ public class ClientDriver {
 	}
 	
 	//获取执行query错误提示信息，最后一个"Caused by: java.io.IOException"一行的信息
+	@SuppressWarnings("unchecked")
 	private static String getSqlErrorMessage(String message) {
 		if(message == null) {
 			return "Query error !";

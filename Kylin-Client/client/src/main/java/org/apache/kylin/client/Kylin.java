@@ -2,9 +2,6 @@ package org.apache.kylin.client;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +18,6 @@ import org.apache.kylin.client.method.KylinGetMethod;
 import org.apache.kylin.client.method.KylinJdbcMethod;
 import org.apache.kylin.client.method.KylinPostMethod;
 import org.apache.kylin.client.method.KylinPutMethod;
-import org.apache.kylin.client.method.Utils;
 import org.apache.kylin.job.constant.JobStatusEnum;
 import org.apache.log4j.Logger;
 
@@ -34,7 +30,8 @@ public class Kylin {
 
 	private KylinGetMethod kylinGetMethod = null;
     private KylinPostMethod kylinPostMethod = null;
-    private KylinDeleteMethod kylinDeleteMethod = null;
+    @SuppressWarnings("unused")
+	private KylinDeleteMethod kylinDeleteMethod = null;
     private KylinJdbcMethod kylinJdbcMethod = null;
     private KylinPutMethod kylinPutMethod = null;
     private Map<String, ProjectMeta> projectCache = new HashMap<String, ProjectMeta>();

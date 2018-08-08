@@ -76,6 +76,7 @@ public class TestKylin {
     	}
 	}
 	
+	@SuppressWarnings("unused")
 	private static List<String> getDimensionValues(CubeDimensionMeta dim) {
 		String columnName = dim.getColumn().getName();
 		String tableName = dim.getColumn().getTable().getName();

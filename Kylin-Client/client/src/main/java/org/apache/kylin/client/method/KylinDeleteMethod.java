@@ -3,6 +3,7 @@ package org.apache.kylin.client.method;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.log4j.Logger;
 
+@SuppressWarnings("unused")
 public class KylinDeleteMethod extends KylinMethod {
 	private static Logger logger = Logger.getLogger(KylinDeleteMethod.class);
 	private HttpClient httpClient = null;

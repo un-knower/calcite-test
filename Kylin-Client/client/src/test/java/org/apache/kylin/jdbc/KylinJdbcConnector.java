@@ -27,14 +27,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
-
-import org.apache.kylin.jdbc.Driver;
 
 public class KylinJdbcConnector {
     private static List<Table> tables = new LinkedList<Table>();

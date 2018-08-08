@@ -18,6 +18,12 @@ public class TimeOperator {
 		System.out.println("year is :" + cal.get(Calendar.YEAR));
 		return cal.get(Calendar.YEAR);
 	}
+	public int THE_SYEAR(Date date) {
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		System.out.println("year is :" + cal.get(Calendar.YEAR));
+		return cal.get(Calendar.YEAR);
+	}
 
 	public int THE_YEAR(int date) {
 		long mills = (long) date * (1000 * 3600 * 24);
@@ -38,7 +44,7 @@ public class TimeOperator {
 	public Integer THE_SYEAR(Date date, String type) {
 		Calendar cal = Calendar.getInstance();
 		cal.setTime(date);
-		logger.info("year is :{}" , cal.get(Calendar.YEAR));
+		logger.info("year is :{} ---->THE_SYEAR" , cal.get(Calendar.YEAR));
 		return cal.get(Calendar.YEAR);
 	}
 }

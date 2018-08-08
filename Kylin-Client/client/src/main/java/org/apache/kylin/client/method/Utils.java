@@ -268,7 +268,8 @@ public class Utils {
     	return cal.getTimeInMillis();
     } 
     
-    public static Object checkMethod(Class classInstance, Object obj, String methodName) {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public static Object checkMethod(Class classInstance, Object obj, String methodName) {
     	if(classInstance == null || obj == null || methodName == null)
     		return null;
     	

@@ -1,23 +1,16 @@
 package org.apache.kylin.client.script;
 
 import java.io.File;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.kylin.client.Kylin;
 import org.apache.kylin.client.KylinClientException;
 import org.apache.kylin.client.meta.CubeMeta;
 import org.apache.kylin.client.meta.CubeModelMeta;
 import org.apache.kylin.client.meta.ProjectMeta;
-import org.apache.kylin.client.method.Utils;
-import org.apache.kylin.client.script.DailyBuildScript.BuildThread;
-import org.apache.kylin.job.constant.JobStatusEnum;
 import org.apache.log4j.Logger;
 
 public class BuildCubesOnTime {
@@ -40,6 +33,7 @@ public class BuildCubesOnTime {
 		this.configFile = configFile;
 	}
 	
+	@SuppressWarnings("unused")
 	public void run(int threadNum) {
 		ExecutorService executorService = Executors.newFixedThreadPool(threadNum);
 		File config = new File(this.configFile);

@@ -9,6 +9,7 @@ public class TestDate {
 	public static void todayStartTime() {
 		
 	}
+	@SuppressWarnings("unused")
 	public static void main(String[] args) throws Exception {
 		Date today = new Date();
 		SimpleDateFormat format = DateFormat.getDateFormat(DateFormat.DEFAULT_DATE_PATTERN);

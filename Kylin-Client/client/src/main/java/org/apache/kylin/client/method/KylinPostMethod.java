@@ -1,7 +1,6 @@
 package org.apache.kylin.client.method;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,16 +13,14 @@ import java.util.Set;
 import java.util.UUID;
 
 import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
 import org.apache.kylin.client.KylinClientException;
+import org.apache.kylin.client.meta.ColumnMeta;
 import org.apache.kylin.client.meta.CreateCubeMeta;
 import org.apache.kylin.client.meta.CreateDimensionMeta;
 import org.apache.kylin.client.meta.CreateDimensionMeta.DimensionType;
-import org.apache.kylin.client.meta.ColumnMeta;
 import org.apache.kylin.client.meta.CreateMeasureMeta;
-import org.apache.kylin.client.meta.CubeMeasureMeta;
 import org.apache.kylin.client.meta.CubeModelMeta;
 import org.apache.kylin.client.meta.CubeRowKeyMeta;
 import org.apache.kylin.client.meta.CubeRowKeyMeta.ColDesc;
@@ -51,7 +48,6 @@ import org.apache.kylin.metadata.project.ProjectInstance;
 import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
 
 public class KylinPostMethod extends KylinMethod {
 	private Logger logger = Logger.getLogger(KylinPostMethod.class);
@@ -96,7 +92,8 @@ public class KylinPostMethod extends KylinMethod {
 		} 
     }
     
-    public List<String> loadTable(List<String> tables, String projectName) throws KylinClientException {
+    @SuppressWarnings("unchecked")
+	public List<String> loadTable(List<String> tables, String projectName) throws KylinClientException {
     	if(tables == null || tables.isEmpty())
     		return tables;
     	StringBuffer tableNames = new StringBuffer();
@@ -399,7 +396,6 @@ public class KylinPostMethod extends KylinMethod {
     }
 
     
-    @SuppressWarnings("deprecation")
 	protected String postRequest(String url, Object obj) 
     		throws KylinClientException {
     	if(this.httpClient == null)

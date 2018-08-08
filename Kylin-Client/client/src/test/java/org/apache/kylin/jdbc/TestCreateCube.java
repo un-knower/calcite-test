@@ -1,6 +1,5 @@
 package org.apache.kylin.jdbc;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -12,8 +11,6 @@ import org.apache.kylin.client.meta.CreateDimensionMeta;
 import org.apache.kylin.client.meta.CreateDimensionMeta.DimensionType;
 import org.apache.kylin.client.meta.CreateMeasureMeta;
 import org.apache.kylin.client.meta.CreateMeasureMeta.MeasureType;
-import org.apache.kylin.client.meta.CubeMeasureMeta;
-import org.apache.kylin.client.meta.CubeMeta;
 import org.apache.kylin.client.meta.CubeModelMeta;
 import org.apache.kylin.client.meta.LookupTableMeta;
 import org.apache.kylin.client.meta.ProjectMeta;

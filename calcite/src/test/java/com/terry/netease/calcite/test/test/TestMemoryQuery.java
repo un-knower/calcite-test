@@ -34,6 +34,7 @@ public class TestMemoryQuery {
         try {
             Connection connection = DriverManager.getConnection("jdbc:calcite:model=" + path, info);
             CalciteConnection calciteConn = connection.unwrap(CalciteConnection.class);
+            calciteConn.getRootSchema().add("THE_SYEAR", ScalarFunctionImpl.create(TimeOperator.class.getMethod("THE_SYEAR", Date.class)));
             calciteConn.getRootSchema().add("THE_YEAR", ScalarFunctionImpl.create(TimeOperator.class.getMethod("THE_YEAR", Date.class)));
             ResultSet result = connection.getMetaData().getTables(null, null, null, null);
             while(result.next()) {

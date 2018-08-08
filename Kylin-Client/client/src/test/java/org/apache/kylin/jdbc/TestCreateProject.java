@@ -29,6 +29,7 @@ public class TestCreateProject {
 		System.out.println("Create project " + project + " success !");
 	}
 	
+	@SuppressWarnings("unused")
 	private static String getRandomName(Random rand) {
 		String PREFIX = "TEST_";
 		String SUFFIX = "_PROJECT";

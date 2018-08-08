@@ -47,15 +47,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 使用proxy的方式连接impala服务器，如果不使用代理的方式，可以直接使用hive jdbc连接。
- * 而对于代理的方式因为hive使用的代理参数为hive.server2.proxy.user=xxx，但是impala使用的参数为impala.doas.user
- * 但是不能够直接通过在url后面加上参数来指定，因为hive-jdbc在openSession的时候会对所有的参数加上
- * set:hiveconf:和set:hivevar:的前缀，导致impala不能识别，因此在使用proxy的时候不能直接使用hive-jdbc。
+ * 使锟斤拷proxy锟侥凤拷式锟斤拷锟斤拷impala锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟绞癸拷么锟斤拷锟侥凤拷式锟斤拷锟斤拷锟斤拷直锟斤拷使锟斤拷hive jdbc锟斤拷锟接★拷
+ * 锟斤拷锟斤拷锟节达拷锟斤拷姆锟绞斤拷锟轿猦ive使锟矫的达拷锟斤拷锟斤拷锟轿猦ive.server2.proxy.user=xxx锟斤拷锟斤拷锟斤拷impala使锟矫的诧拷锟斤拷为impala.doas.user
+ * 锟斤拷锟角诧拷锟杰癸拷直锟斤拷通锟斤拷锟斤拷url锟斤拷锟斤拷锟斤拷喜锟斤拷锟斤拷锟街革拷锟斤拷锟斤拷锟轿猦ive-jdbc锟斤拷openSession锟斤拷时锟斤拷锟斤拷锟斤拷锟叫的诧拷锟斤拷锟斤拷锟斤拷
+ * set:hiveconf:锟斤拷set:hivevar:锟斤拷前缀锟斤拷锟斤拷锟斤拷impala锟斤拷锟斤拷识锟斤拷锟斤拷锟斤拷锟绞癸拷锟絧roxy锟斤拷时锟斤拷锟斤拷直锟斤拷使锟斤拷hive-jdbc锟斤拷
  * 
- * Input: hive jdbc url,兼容hive url的格式,需要使用一个可代理用户执行
- * Output : TCLIService.Iface对象，已经执行openSession。
+ * Input: hive jdbc url,锟斤拷锟斤拷hive url锟侥革拷式,锟斤拷要使锟斤拷一锟斤拷锟缴达拷锟斤拷锟矫伙拷执锟斤拷
+ * Output : TCLIService.Iface锟斤拷锟斤拷锟窖撅拷执锟斤拷openSession锟斤拷
  * 
  */
+@SuppressWarnings("unused")
 public class ThriftClientExample {
 	private static int ONE_FETCH_COUNT = 10;
 	private static final Options options = new Options();
@@ -218,6 +219,7 @@ public class ThriftClientExample {
 	    
 	    return null;
 	}
+	
 	
 	private static Result getDatabases(ImpalaThriftClient cli) throws Exception {
 		TCLIService.Iface client = cli.getHS2Client();

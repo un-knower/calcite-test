@@ -1,12 +1,9 @@
 package org.apache.kylin.jdbc;
 
 import org.apache.kylin.client.Kylin;
-import org.apache.kylin.client.KylinClientException;
 import org.apache.kylin.client.meta.CubeMeta;
 import org.apache.kylin.client.meta.ProjectMeta;
-import org.apache.kylin.client.method.Utils;
 import org.apache.kylin.job.constant.JobStatusEnum;
-import org.apache.kylin.job.execution.ExecutableState;
 
 public class TestBuildCubeAndStatus {
 	private static String cubeName = "nos_speed";
