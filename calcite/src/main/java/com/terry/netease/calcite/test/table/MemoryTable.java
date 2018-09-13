@@ -35,6 +35,7 @@ public class MemoryTable extends AbstractTable implements ScannableTable {
     }
 
 
+    @Override
 	public RelDataType getRowType(RelDataTypeFactory typeFactory) {
 		if(dataType == null) {
             RelDataTypeFactory.FieldInfoBuilder fieldInfo = typeFactory.builder();
@@ -49,6 +50,7 @@ public class MemoryTable extends AbstractTable implements ScannableTable {
 	}
 
 
+    @Override
 	public Enumerable<Object[]> scan(DataContext root) {
 		final List<String> types = new ArrayList<String>(sourceTable.columns.size());
 		for(MemoryData.Column column : sourceTable.columns) {

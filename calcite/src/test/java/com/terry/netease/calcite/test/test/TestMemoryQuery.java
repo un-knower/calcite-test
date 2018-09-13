@@ -21,6 +21,7 @@ public class TestMemoryQuery {
 	
     @SuppressWarnings("static-access")
 	public static void main(String[] args) throws Exception {
+    	long start = System.currentTimeMillis();
     	TestMemoryQuery t = new TestMemoryQuery();
     	URL systemResource = t.getClass().getClassLoader().getSystemResource("School.json");
     	String path = systemResource.getPath().toString();
@@ -66,6 +67,8 @@ public class TestMemoryQuery {
             
             result.close();
             connection.close();
+            long end = System.currentTimeMillis();
+            System.out.println((end - start)+"ms");
         } catch (SQLException e) {
             e.printStackTrace();
         }
